@@ -9,8 +9,8 @@ const server = http.createServer((req, res) => {
       console.log(err.message);
       res.end();
     } else {
-      res.write(data);
-      res.end();
+      //   res.write(data);
+      res.end(data);
     }
   });
 });
