@@ -1,7 +1,13 @@
 const port = 3000;
 const http = require("http");
 const fs = require("fs");
+const lodash = require("lodash");
 const server = http.createServer((req, res) => {
+  const greet = lodash.once(() => {
+    console.log("Hello 🌍🌍🌍");
+  });
+  greet();
+  greet();
   res.setHeader("Content-Type", "text/html");
   let path = "./views/";
   switch (req.url) {
