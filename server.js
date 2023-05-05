@@ -1,3 +1,4 @@
+const port = 3000;
 const http = require("http");
 const fs = require("fs");
 const server = http.createServer((req, res) => {
@@ -12,7 +13,7 @@ const server = http.createServer((req, res) => {
       path += "about.html";
       res.statusCode = 200;
       break;
-    case "/about-me":
+    case "/about-us":
       res.statusCode = 301;
       res.setHeader("Location", "/about");
       res.end();
@@ -32,7 +33,6 @@ const server = http.createServer((req, res) => {
     }
   });
 });
-
-server.listen(3000, "localhost", () => {
-  console.log("listening for requests");
+server.listen(port, "localhost", () => {
+  console.log(`listening for requests http://localhost:${port}`);
 });
